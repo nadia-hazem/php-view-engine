@@ -1,30 +1,31 @@
-# PHP-MVC Starter Template
+# PHP View Engine
 
-Part of the **Pictelle Developer Templates** collection.
+Part of the **PICTELLE PHP Starters** collection.
 
-A lightweight MVC starter template built with modern PHP.
+Built on top of the **PHP MVC Starter**.
 
-This project is designed as a learning resource as much as a reusable foundation for future web applications. The goal is to understand how an MVC architecture works internally by building every component from scratch, without relying on a full-featured framework.
+This project extends the MVC foundation by introducing a simple and reusable view engine using pages, partials and a centralized rendering system.
 
 ---
 
 ## Features
 
-* Modern PHP 8+
-* Lightweight MVC architecture
-* PSR-4 autoloading with Composer
-* Custom Router
-* Dynamic controller dispatching
-* Clean project structure
-* Public directory as web root
-* Vanilla PHP (no framework)
+- Built on top of PHP MVC Starter
+- Modern PHP 8+
+- Lightweight MVC architecture
+- Centralized render() method
+- Data passing from controllers to views
+- Reusable partials
+- Clean project structure
+- PSR-4 autoloading
+- Vanilla PHP (no framework)
 
 ---
 
 ## Project Structure
 
 ```text
-crud-mvc-template/
+php-view-engine/
 │
 ├── public/
 │   └── index.php
@@ -34,8 +35,9 @@ crud-mvc-template/
 ├── src/
 │   ├── Controllers/
 │   ├── Core/
-│   ├── Models/
 │   └── Views/
+│       ├── pages/
+│       └── partials/
 │
 ├── vendor/
 ├── composer.json
@@ -57,7 +59,7 @@ crud-mvc-template/
 Clone the repository
 
 ```bash
-git clone https://github.com/your-username/crud-mvc-template.git
+git clone https://github.com/your-username/php-view-engine.git
 ```
 
 Install dependencies
@@ -66,64 +68,69 @@ Install dependencies
 composer install
 ```
 
-Start your local server and configure the **public/** directory as the document root.
+Configure your local web server so that the **public/** directory is the document root.
 
 ---
 
-## Routing
+## How it works
 
-Routes are declared inside:
+Controllers prepare the data and call a single `render()` method.
 
-```text
-routes.php
-```
+The render method:
 
-Example:
+- extracts the data passed by the controller
+- loads the shared header
+- displays the requested page
+- loads the shared footer
 
-```php
-$router->get('/', [HomeController::class, 'index']);
-```
-
-The Router automatically:
-
-* matches the requested URI
-* instantiates the controller
-* calls the requested method
+Views remain focused on presentation while reusable interface components are stored as partials.
 
 ---
 
 ## Philosophy
 
-This project intentionally avoids large frameworks.
+This project intentionally keeps the view engine simple.
 
-Every component is implemented progressively to understand:
+Instead of relying on external template engines, it demonstrates how reusable views can be built with native PHP using a clean MVC architecture.
 
-* routing
-* controllers
-* models
-* views
-* application flow
-* object-oriented programming
+The objective is to understand how controllers, views and reusable components interact before introducing more advanced rendering techniques.
 
-The objective is not to compete with Laravel or Symfony, but to learn the underlying concepts while keeping the code readable and maintainable.
 
 ---
 
 ## Roadmap
 
-* ✅ Composer & PSR-4
-* ✅ Router
-* ✅ Dynamic Controller Dispatch
-* ⬜ View Engine
-* ⬜ Database Connection
-* ⬜ Models
-* ⬜ CRUD Operations
-* ⬜ Validation
-* ⬜ Sessions
+### Foundation Series
+
+* ✅ #1 MVC Starter
+
+* ✅ #2 CRUD
+
+* ✅ #3 View Engine
+
+* ⬜ #4 Route Parameters
+
+---------------------
+
+### Advanced Series
+
 * ⬜ Authentication
-* ⬜ File Upload
+
+* ⬜ Dashboard
+
+* ⬜ Upload Images
+
+* ⬜ Search & Autocomplete
+
 * ⬜ Pagination
 
+* ⬜ Membership
+
+* ⬜ Calendar
+
+* ⬜ Reservation
+
+* ⬜ Comments
 ---
 
 ## Learning Goals
