@@ -108,7 +108,7 @@ The objective is to understand how controllers, views and reusable components in
 
 * ✅ #3 View Engine
 
-* ⬜ #4 Route Parameters
+* 🟩 #4 Route Parameters
 
 ---------------------
 

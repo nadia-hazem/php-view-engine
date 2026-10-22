@@ -1,11 +1,11 @@
 {
-    "name": "pictelle/php-mvc-starter",
-    "description": "Reusable PHP MVC starter template",
+    "name": "pictelle/php-view-engine",
+    "description": "Reusable PHP view engine with pages and partials",
     "license": "MIT",
     "authors": [
         {
             "name": "Pictelle",
-            "email": "contact@pictelle.fr"
+            "email": "contact@pictelle.com"
         }
     ],
     "minimum-stability": "stable",
